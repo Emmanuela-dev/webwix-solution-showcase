@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { team } from "@/data/team";
+import { testimonials } from "@/data/testimonials";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -152,15 +153,41 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <p className="text-sm font-medium tracking-wide text-accent">TESTIMONIALS</p>
+        <h2 className="mt-2 max-w-2xl font-display text-3xl md:text-4xl">
+          Trusted by teams building for the long term.
+        </h2>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {testimonials.map((t) => (
+            <figure
+              key={t.name}
+              className="flex h-full flex-col rounded-2xl border border-border bg-card p-8"
+            >
+              <blockquote className="flex-1 font-display text-lg leading-relaxed text-foreground">
+                “{t.quote}”
+              </blockquote>
+              <figcaption className="mt-6 border-t border-border pt-4">
+                <div className="font-semibold">{t.name}</div>
+                <div className="text-sm text-muted-foreground">
+                  {t.role}, {t.company}
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-6 pb-20">
         <div className="rounded-3xl bg-primary px-8 py-14 text-primary-foreground md:px-14">
           <h2 className="max-w-2xl font-display text-3xl md:text-4xl">
-            Investors, partners, and clients — let's build what lasts.
+            Let's build something lasting, together.
           </h2>
           <p className="mt-4 max-w-xl text-primary-foreground/80">
-            We're actively raising and forming strategic partnerships. Reach out for our
-            pitch deck and product roadmap.
+            Whether you're exploring a partnership, starting a new product, or joining
+            the team — we'd love to hear from you.
           </p>
           <Link
             to="/contact"

@@ -39,9 +39,9 @@ function ContactPage() {
                 <dd className="mt-1 text-muted-foreground">Nairobi, Kenya</dd>
               </div>
               <div>
-                <dt className="font-semibold">Investors</dt>
+                <dt className="font-semibold">Partnerships</dt>
                 <dd className="mt-1 text-muted-foreground">
-                  Request our pitch deck: investors@webwixsolutions.com
+                  partnerships@webwixsolutions.com
                 </dd>
               </div>
             </dl>

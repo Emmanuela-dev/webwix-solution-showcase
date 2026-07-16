@@ -15,7 +15,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary p-1.5">
-            <img src={logo.url} alt="WebWix Solutions" className="h-full w-full object-contain" />
+            <img src={logo.jpeg} alt="WebWix Solutions" className="h-full w-full object-contain" />
           </div>
           <span className="font-display text-lg font-semibold tracking-tight">
             WebWix <span className="text-accent">Solutions</span>

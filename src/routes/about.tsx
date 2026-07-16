@@ -49,13 +49,49 @@ function AboutPage() {
           ))}
         </div>
 
+        <div className="mt-16 grid gap-10 md:grid-cols-2">
+          <div>
+            <p className="text-sm font-medium tracking-wide text-accent">OUR STORY</p>
+            <h2 className="mt-2 font-display text-3xl">From an idea to a platform company.</h2>
+            <p className="mt-4 text-muted-foreground">
+              WebWix Solutions started as a small team of engineers and operators who
+              were tired of throwaway software. We saw first-hand how many digital
+              products in our markets were built for demos, not for daily life — and
+              set out to do the opposite.
+            </p>
+            <p className="mt-4 text-muted-foreground">
+              Today we build across three verticals — software, fintech, and agritech —
+              with a single obsession: shipping products that people can rely on years
+              from now, not just weeks.
+            </p>
+          </div>
+          <div>
+            <p className="text-sm font-medium tracking-wide text-accent">HOW WE WORK</p>
+            <h2 className="mt-2 font-display text-3xl">Small teams. Deep ownership.</h2>
+            <ul className="mt-4 space-y-4 text-muted-foreground">
+              <li>
+                <span className="font-semibold text-foreground">Craft first.</span>{" "}
+                We measure ourselves on the quality of what we ship, not the volume of tickets closed.
+              </li>
+              <li>
+                <span className="font-semibold text-foreground">Close to the problem.</span>{" "}
+                Our teams sit with the users we build for — farmers, operators, finance leads.
+              </li>
+              <li>
+                <span className="font-semibold text-foreground">Long partnerships.</span>{" "}
+                We work with a small number of clients deeply, rather than many shallowly.
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <div className="mt-16 rounded-3xl bg-secondary/60 p-10">
-          <h2 className="max-w-2xl font-display text-3xl">Why investors partner with WebWix.</h2>
+          <h2 className="max-w-2xl font-display text-3xl">What we care about.</h2>
           <div className="mt-8 grid gap-8 md:grid-cols-3">
             {[
-              ["Focused portfolio", "Three high-growth verticals with clear synergies and cross-selling potential."],
-              ["Founder-led", "Operating leadership with deep technical and domain expertise."],
-              ["Built to last", "Products designed for resilience, compliance, and long-term unit economics."],
+              ["Impact over hype", "We choose problems where great software genuinely changes outcomes."],
+              ["People first", "A calm, curious team culture — where engineers and operators grow together."],
+              ["Built to last", "Every product is designed to still be useful, secure, and maintainable years from now."],
             ].map(([t, d]) => (
               <div key={t}>
                 <h4 className="font-display text-lg">{t}</h4>

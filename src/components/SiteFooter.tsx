@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/webwix-logo.png.asset.json";
+import logo from "@/assets/logo.jpeg";
 
 export function SiteFooter() {
   return (
@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary p-1.5">
-              <img src={logo.url} alt="WebWix Solutions" className="h-full w-full object-contain" />
+              <img src={logo} alt="WebWix Solutions" className="h-full w-full object-contain" />
             </div>
             <span className="font-display text-lg font-semibold">WebWix Solutions</span>
           </div>

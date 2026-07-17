@@ -32,7 +32,7 @@ function ContactPage() {
               </div>
               <div>
                 <dt className="font-semibold">Phone</dt>
-                <dd className="mt-1 text-muted-foreground">+254 700 000 000</dd>
+                <dd className="mt-1 text-muted-foreground">+254 793540542</dd>
               </div>
               <div>
                 <dt className="font-semibold">Office</dt>

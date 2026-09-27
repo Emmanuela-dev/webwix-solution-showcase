@@ -1,20 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { testimonials } from "@/data/testimonials";
+import iotProjectsImg from "@/assets/iot-projects.jpg";
+import iotMentorshipImg from "@/assets/iot-mentorship.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "WebWix Solutions — Building softwares that last" },
+      { title: "WebWix Solutions — Software, Fintech, Agritech & IoT Systems" },
       {
         name: "description",
         content:
-          "WebWix Solutions is a technology startup building resilient software, fintech, and agritech products for Africa and beyond.",
+          "WebWix Solutions builds resilient software, fintech, agritech, and IoT & embedded systems with hands-on mentorship and training.",
       },
-      { property: "og:title", content: "WebWix Solutions — Building softwares that last" },
+      { property: "og:title", content: "WebWix Solutions — Building softwares & IoT systems that last" },
       {
         property: "og:description",
-        content: "Software, fintech, and agritech innovations engineered to last.",
+        content: "Software, fintech, agritech, and IoT & embedded hardware innovations engineered to last.",
       },
     ],
   }),
@@ -34,6 +36,14 @@ const services = [
     title: "Agritech Solutions",
     desc: "Data-driven tools that connect farmers, markets, and finance — modernising the food value chain.",
   },
+  {
+    title: "IoT & Embedded Systems",
+    desc: "Custom PCB design, smart sensors, firmware development, and edge telemetry hardware.",
+  },
+  {
+    title: "IoT Mentorship & Training",
+    desc: "Practical hands-on training, circuit debugging, and mentorship programs for engineers and student innovators.",
+  },
 ];
 
 function HomePage() {
@@ -50,15 +60,15 @@ function HomePage() {
         />
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <span className="inline-flex items-center rounded-full border border-border bg-background/60 px-3 py-1 text-xs font-medium tracking-wide text-muted-foreground">
-            SOFTWARE · FINTECH · AGRITECH
+            SOFTWARE · FINTECH · AGRITECH · IOT & EMBEDDED
           </span>
           <h1 className="mt-6 max-w-3xl font-display text-5xl leading-[1.05] font-semibold md:text-6xl">
-            Building softwares <span className="text-accent">that last.</span>
+            Building software & IoT systems <span className="text-accent">that last.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
             WebWix Solutions is a technology startup engineering resilient digital
-            products across software, financial services, and agriculture — designed
-            for real-world impact.
+            products and IoT hardware — offering custom development alongside hands-on
+            IoT mentorship and technical training.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -71,7 +81,7 @@ function HomePage() {
               to="/services"
               className="rounded-full border border-border bg-background/60 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
             >
-              Explore what we build
+              Explore our solutions & training
             </Link>
           </div>
         </div>
@@ -81,23 +91,77 @@ function HomePage() {
       <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="flex items-end justify-between">
           <div>
-            <p className="text-sm font-medium tracking-wide text-accent">WHAT WE DO</p>
-            <h2 className="mt-2 font-display text-3xl md:text-4xl">Three verticals. One standard of craft.</h2>
+            <p className="text-sm font-medium tracking-wide text-accent">OUR SOLUTIONS & SERVICES</p>
+            <h2 className="mt-2 font-display text-3xl md:text-4xl">Core verticals & technical mentorship.</h2>
           </div>
           <Link to="/services" className="hidden text-sm text-muted-foreground hover:text-foreground md:inline">
-            All services →
+            All solutions →
           </Link>
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
-            <div key={s.title} className="group rounded-2xl border border-border bg-card p-8 transition-shadow hover:shadow-lg">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary font-display text-lg font-semibold text-primary">
-                0{i + 1}
+            <div key={s.title} className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-8 transition-shadow hover:shadow-lg">
+              <div>
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary font-display text-lg font-semibold text-primary">
+                  0{i + 1}
+                </div>
+                <h3 className="mt-6 font-display text-xl">{s.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
               </div>
-              <h3 className="mt-6 font-display text-xl">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* IoT & Embedded Systems Showcase Section */}
+      <section className="border-t border-border bg-secondary/20 py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium tracking-wide text-accent">IOT & EMBEDDED SHOWCASE</p>
+            <h2 className="mt-2 font-display text-3xl md:text-4xl">Hardware Engineering & IoT Mentorship</h2>
+            <p className="mt-4 text-muted-foreground">
+              We design connected hardware solutions for industrial and agricultural application,
+              while actively mentoring developers and teams in embedded systems engineering.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            <div className="group overflow-hidden rounded-2xl border border-border bg-card">
+              <div className="aspect-[16/10] overflow-hidden bg-secondary">
+                <img
+                  src={iotProjectsImg}
+                  alt="IoT Hardware Projects Showcase"
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-7">
+                <span className="text-xs font-semibold text-accent">EMBEDDED HARDWARE</span>
+                <h3 className="mt-2 font-display text-2xl">IoT & Embedded Systems Projects</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Prototyping and deploying smart microcontrollers, wireless sensor arrays, telemetry devices, and IoT telemetry dashboards.
+                </p>
+              </div>
+            </div>
+
+            <div className="group overflow-hidden rounded-2xl border border-border bg-card">
+              <div className="aspect-[16/10] overflow-hidden bg-secondary">
+                <img
+                  src={iotMentorshipImg}
+                  alt="IoT Mentorship and Technical Training"
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-7">
+                <span className="text-xs font-semibold text-accent">EDUCATION & CAPACITY</span>
+                <h3 className="mt-2 font-display text-2xl">IoT Mentorship & Hands-on Training</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Interactive workshops, hardware bootcamps, and 1-on-1 mentorship for students and engineers building real-world embedded devices.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -105,9 +169,9 @@ function HomePage() {
       <section className="border-y border-border bg-secondary/40">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 py-14 md:grid-cols-4">
           {[
-            ["3", "Focus verticals"],
-            ["10+", "Products in build"],
-            ["100%", "Founder-led"],
+            ["5", "Core solutions & services"],
+            ["10+", "IoT & software projects"],
+            ["100+", "Mentees & trainees taught"],
             ["1", "Standard — excellence"],
           ].map(([n, l]) => (
             <div key={l}>
@@ -148,11 +212,10 @@ function HomePage() {
       <section className="mx-auto max-w-6xl px-6 pb-20">
         <div className="rounded-3xl bg-primary px-8 py-14 text-primary-foreground md:px-14">
           <h2 className="max-w-2xl font-display text-3xl md:text-4xl">
-            Let's build something lasting, together.
+            Let's build hardware or software together.
           </h2>
           <p className="mt-4 max-w-xl text-primary-foreground/80">
-            Whether you're exploring a partnership, starting a new product, or joining
-            the team — we'd love to hear from you.
+            Whether you need custom software, IoT project development, or IoT mentorship & training — we'd love to partner with you.
           </p>
           <Link
             to="/contact"
@@ -165,3 +228,4 @@ function HomePage() {
     </SiteLayout>
   );
 }
+

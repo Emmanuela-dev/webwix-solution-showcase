@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo.jpeg";
 
 export function SiteFooter() {
   return (
@@ -7,8 +6,8 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-8 px-6 py-12 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary p-1.5">
-              <img src={logo} alt="WebWix Solutions" className="h-full w-full object-contain" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary font-display text-base font-bold text-primary-foreground">
+              W
             </div>
             <span className="font-display text-lg font-semibold">WebWix Solutions</span>
           </div>
@@ -21,7 +20,6 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li><Link to="/services" className="hover:text-foreground">Services</Link></li>
             <li><Link to="/about" className="hover:text-foreground">About</Link></li>
-            <li><Link to="/team" className="hover:text-foreground">Team</Link></li>
             <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
           </ul>
         </div>

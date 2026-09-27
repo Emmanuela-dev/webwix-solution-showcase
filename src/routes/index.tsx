@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { team } from "@/data/team";
 import { testimonials } from "@/data/testimonials";
 
 export const Route = createFileRoute("/")({
@@ -38,7 +37,6 @@ const services = [
 ];
 
 function HomePage() {
-  const leaders = team.slice(0, 4);
   return (
     <SiteLayout>
       {/* Hero */}
@@ -115,39 +113,6 @@ function HomePage() {
             <div key={l}>
               <div className="font-display text-4xl text-primary">{n}</div>
               <div className="mt-2 text-sm text-muted-foreground">{l}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Leadership preview */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="flex items-end justify-between">
-          <div>
-            <p className="text-sm font-medium tracking-wide text-accent">LEADERSHIP</p>
-            <h2 className="mt-2 font-display text-3xl md:text-4xl">Founders behind WebWix.</h2>
-          </div>
-          <Link to="/team" className="hidden text-sm text-muted-foreground hover:text-foreground md:inline">
-            Meet the team →
-          </Link>
-        </div>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {leaders.map((m) => (
-            <div key={m.name} className="overflow-hidden rounded-2xl border border-border bg-card">
-              <div className="aspect-square overflow-hidden bg-secondary">
-                <img
-                  src={m.image}
-                  alt={m.name}
-                  loading="lazy"
-                  width={640}
-                  height={640}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="font-display text-lg">{m.name}</h3>
-                <p className="text-sm text-accent">{m.role}</p>
-              </div>
             </div>
           ))}
         </div>

@@ -1,0 +1,134 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteLayout } from "@/components/SiteLayout";
+import epiqueInteriorsImg from "@/assets/epique-interiors.jpg";
+import bsGreensmartImg from "@/assets/bs-greensmart-farm.jpg";
+
+export const Route = createFileRoute("/works")({
+  head: () => ({
+    meta: [
+      { title: "Our Work — WebWix Solutions" },
+      { name: "description", content: "Explore featured client projects built by WebWix Solutions including Epique Interiors and BS GREENSMART FARM." },
+      { property: "og:title", content: "Our Work — WebWix Solutions Showcase" },
+      { property: "og:description", content: "Featured websites and platforms engineered by WebWix Solutions." },
+    ],
+  }),
+  component: WorksPage,
+});
+
+const projects = [
+  {
+    id: "epique-interiors",
+    title: "Epique Interiors",
+    tagline: "Luxury Interior Design Studio Web Experience",
+    category: "INTERIOR DESIGN & ARCHITECTURE",
+    image: epiqueInteriorsImg,
+    summary:
+      "A bespoke, high-end digital web application built for Epique Interiors — an elite interior design firm. We designed and engineered a modern platform featuring interactive portfolio showcases, high-definition space previews, automated client inquiry routing, and online consultation booking.",
+    highlights: [
+      "High-performance interactive project galleries",
+      "Custom consultation booking & onboarding flow",
+      "Seamless mobile & desktop responsive experience",
+      "SEO & speed optimization tailored for luxury clients",
+    ],
+    tech: ["React / TypeScript", "Tailwind CSS", "CMS Portfolio Engine", "Form Automation"],
+  },
+  {
+    id: "bs-greensmart-farm",
+    title: "BS GREENSMART FARM",
+    tagline: "Smart Agritech & Sustainable Farm Management Platform",
+    category: "AGRITECH & SMART FARMING",
+    image: bsGreensmartImg,
+    summary:
+      "An end-to-end digital agritech platform developed for BS GREENSMART FARM. Integrates farm product showcases, smart greenhouse IoT telemetry tracking, sustainable harvest forecasting, and a direct farm-to-table consumer ordering portal.",
+    highlights: [
+      "Real-time IoT greenhouse sensor telemetry integration",
+      "E-Commerce store for fresh organic farm produce",
+      "Automated inventory & crop yield management",
+      "Mobile-optimized consumer & wholesale portal",
+    ],
+    tech: ["Full-Stack Web App", "IoT Telemetry Dashboard", "E-Commerce Rails", "Cloud Telemetry"],
+  },
+];
+
+function WorksPage() {
+  return (
+    <SiteLayout>
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="max-w-3xl">
+          <p className="text-sm font-medium tracking-wide text-accent">FEATURED PROJECTS</p>
+          <h1 className="mt-2 font-display text-4xl md:text-5xl">
+            Our Work & Client Showcase.
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Explore recent digital platforms, brand experiences, and smart IoT applications
+            built by WebWix Solutions for ambitious businesses.
+          </p>
+        </div>
+
+        <div className="mt-16 space-y-20">
+          {projects.map((p, idx) => (
+            <article
+              key={p.id}
+              className="grid gap-10 overflow-hidden rounded-3xl border border-border bg-card p-8 md:grid-cols-2 md:p-12"
+            >
+              <div className="flex flex-col justify-between">
+                <div>
+                  <span className="inline-flex rounded-full bg-secondary px-3 py-1 text-xs font-semibold tracking-wide text-accent">
+                    {p.category}
+                  </span>
+                  <h2 className="mt-4 font-display text-3xl md:text-4xl">{p.title}</h2>
+                  <p className="mt-2 font-display text-lg text-foreground/90">{p.tagline}</p>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.summary}</p>
+
+                  <div className="mt-6">
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Key Highlights</h3>
+                    <ul className="mt-3 space-y-2">
+                      {p.highlights.map((h) => (
+                        <li key={h} className="flex items-start gap-2 text-sm text-foreground/90">
+                          <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-accent" />
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-border">
+                  <div className="flex flex-wrap gap-2">
+                    {p.tech.map((t) => (
+                      <span key={t} className="rounded-md bg-secondary/80 px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative aspect-[16/11] overflow-hidden rounded-2xl bg-secondary md:aspect-auto md:h-full">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-24 rounded-3xl bg-secondary/50 p-10 text-center md:p-16">
+          <h2 className="mx-auto max-w-xl font-display text-3xl md:text-4xl">Have a project in mind?</h2>
+          <p className="mx-auto mt-4 max-w-lg text-muted-foreground">
+            Whether you need a custom website, an e-commerce platform, or an IoT hardware integration — let's bring it to life.
+          </p>
+          <Link
+            to="/contact"
+            className="mt-8 inline-flex rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Start your project with us
+          </Link>
+        </div>
+      </section>
+    </SiteLayout>
+  );
+}

@@ -3,6 +3,8 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { testimonials } from "@/data/testimonials";
 import iotProjectsImg from "@/assets/iot-projects.jpg";
 import iotMentorshipImg from "@/assets/iot-mentorship.jpg";
+import epiqueInteriorsImg from "@/assets/epique-interiors.jpg";
+import bsGreensmartImg from "@/assets/bs-greensmart-farm.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -46,6 +48,24 @@ const services = [
   },
 ];
 
+const featuredWorks = [
+  {
+    id: "epique-interiors",
+    title: "Epique Interiors",
+    category: "INTERIOR DESIGN WEBSITE",
+    desc: "A luxury digital experience engineered for an elite interior design firm — featuring interactive project galleries, 3D space previews, and online consultation booking.",
+    image: epiqueInteriorsImg,
+  },
+  {
+    id: "bs-greensmart-farm",
+    title: "BS GREENSMART FARM",
+    tagline: "Smart Agritech Platform",
+    category: "SMART FARM & AGRITECH",
+    desc: "An end-to-end digital agritech portal for BS GREENSMART FARM — connecting smart greenhouse IoT telemetry, fresh produce e-commerce, and harvest tracking.",
+    image: bsGreensmartImg,
+  },
+];
+
 function HomePage() {
   return (
     <SiteLayout>
@@ -78,10 +98,10 @@ function HomePage() {
               Partner with us
             </Link>
             <Link
-              to="/services"
+              to="/works"
               className="rounded-full border border-border bg-background/60 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
             >
-              Explore our solutions & training
+              View Our Client Work
             </Link>
           </div>
         </div>
@@ -110,6 +130,49 @@ function HomePage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Featured Works Showcase */}
+      <section className="border-t border-border bg-card py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-medium tracking-wide text-accent">FEATURED CLIENT WORKS</p>
+              <h2 className="mt-2 font-display text-3xl md:text-4xl">Websites & Platforms We've Built</h2>
+            </div>
+            <Link to="/works" className="mt-4 md:mt-0 text-sm font-medium text-accent hover:underline">
+              Explore all case studies →
+            </Link>
+          </div>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            {featuredWorks.map((w) => (
+              <div key={w.id} className="group overflow-hidden rounded-2xl border border-border bg-background transition-all hover:border-accent/60">
+                <div className="aspect-[16/10] overflow-hidden bg-secondary">
+                  <img
+                    src={w.image}
+                    alt={w.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-8">
+                  <span className="inline-flex rounded-full bg-secondary px-3 py-1 text-xs font-semibold tracking-wide text-accent">
+                    {w.category}
+                  </span>
+                  <h3 className="mt-3 font-display text-2xl">{w.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{w.desc}</p>
+                  <Link
+                    to="/works"
+                    className="mt-6 inline-flex items-center text-sm font-medium text-primary hover:text-accent"
+                  >
+                    View project story →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

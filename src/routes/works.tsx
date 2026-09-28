@@ -22,6 +22,7 @@ const projects = [
     tagline: "Luxury Interior Design Studio Web Experience",
     category: "INTERIOR DESIGN & ARCHITECTURE",
     image: epiqueInteriorsImg,
+    url: "https://epiqueinteriors.vercel.app/",
     summary:
       "A bespoke, high-end digital web application built for Epique Interiors — an elite interior design firm. We designed and engineered a modern platform featuring interactive portfolio showcases, high-definition space previews, automated client inquiry routing, and online consultation booking.",
     highlights: [
@@ -38,6 +39,7 @@ const projects = [
     tagline: "Smart Agritech & Sustainable Farm Management Platform",
     category: "AGRITECH & SMART FARMING",
     image: bsGreensmartImg,
+    url: "https://greensmart-investments.vercel.app/",
     summary:
       "An end-to-end digital agritech platform developed for BS GREENSMART FARM. Integrates farm product showcases, smart greenhouse IoT telemetry tracking, sustainable harvest forecasting, and a direct farm-to-table consumer ordering portal.",
     highlights: [
@@ -94,23 +96,40 @@ function WorksPage() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-border">
-                  <div className="flex flex-wrap gap-2">
-                    {p.tech.map((t) => (
-                      <span key={t} className="rounded-md bg-secondary/80 px-2.5 py-1 text-xs font-medium text-muted-foreground">
-                        {t}
-                      </span>
-                    ))}
+                  <div className="flex flex-wrap items-center justify-between gap-4">
+                    <div className="flex flex-wrap gap-2">
+                      {p.tech.map((t) => (
+                        <span key={t} className="rounded-md bg-secondary/80 px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <a
+                      href={p.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-xs font-semibold text-primary-foreground transition-all hover:opacity-90 hover:shadow-md"
+                    >
+                      Visit Live Website ↗
+                    </a>
                   </div>
                 </div>
               </div>
 
               <div className="relative aspect-[16/11] overflow-hidden rounded-2xl bg-secondary md:aspect-auto md:h-full">
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-                />
+                <a href={p.url} target="_blank" rel="noopener noreferrer" className="group block h-full w-full">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span className="rounded-full bg-background/90 px-4 py-2 text-xs font-semibold text-foreground backdrop-blur">
+                      View Live Website ↗
+                    </span>
+                  </div>
+                </a>
               </div>
             </article>
           ))}

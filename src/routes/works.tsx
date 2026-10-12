@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import epiqueInteriorsImg from "@/assets/epique-interiors.jpg";
-import restaurantPosImg from "@/assets/iot-projects.jpg";
+import restaurantPosImg from "@/assets/restaurant-pos.png";
 
 export const Route = createFileRoute("/works")({
   head: () => ({

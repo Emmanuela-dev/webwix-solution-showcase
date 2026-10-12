@@ -4,6 +4,7 @@ import { testimonials } from "@/data/testimonials";
 import iotProjectsImg from "@/assets/iot-projects.jpg";
 import iotMentorshipImg from "@/assets/iot-mentorship.jpg";
 import epiqueInteriorsImg from "@/assets/epique-interiors.jpg";
+import restaurantPosImg from "@/assets/restaurant-pos.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -62,7 +63,7 @@ const featuredWorks = [
     tagline: "Full-Service POS & Operations Platform",
     category: "HOSPITALITY & RETAIL TECH",
     desc: "A full-featured restaurant point-of-sale system handling table management, order routing to the kitchen, inventory tracking, and daily sales reporting — from a single fast tablet interface.",
-    image: iotProjectsImg,
+    image: restaurantPosImg,
     url: "#",
   },
 ];

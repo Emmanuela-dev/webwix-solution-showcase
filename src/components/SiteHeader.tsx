@@ -1,4 +1,6 @@
 import { Link } from "@tanstack/react-router";
+import logoImg from "@/assets/logo.jpeg";
+
 const nav = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
@@ -13,9 +15,11 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary font-display text-base font-bold text-primary-foreground">
-            W
-          </div>
+          <img
+            src={logoImg}
+            alt="WebWix Solutions"
+            className="h-9 w-9 rounded-md object-cover"
+          />
           <span className="font-display text-lg font-semibold tracking-tight">
             WebWix <span className="text-accent">Solutions</span>
           </span>

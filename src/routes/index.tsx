@@ -4,7 +4,6 @@ import { testimonials } from "@/data/testimonials";
 import iotProjectsImg from "@/assets/iot-projects.jpg";
 import iotMentorshipImg from "@/assets/iot-mentorship.jpg";
 import epiqueInteriorsImg from "@/assets/epique-interiors.jpg";
-import bsGreensmartImg from "@/assets/bs-greensmart-farm.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -58,13 +57,13 @@ const featuredWorks = [
     url: "https://epiqueinteriors.vercel.app/",
   },
   {
-    id: "bs-greensmart-farm",
-    title: "BS GREENSMART FARM",
-    tagline: "Smart Agritech Platform",
-    category: "SMART FARM & AGRITECH",
-    desc: "An end-to-end digital agritech portal for BS GREENSMART FARM — connecting smart greenhouse IoT telemetry, fresh produce e-commerce, and harvest tracking.",
-    image: bsGreensmartImg,
-    url: "https://greensmart-investments.vercel.app/",
+    id: "restaurant-pos",
+    title: "Restaurant POS System",
+    tagline: "Full-Service POS & Operations Platform",
+    category: "HOSPITALITY & RETAIL TECH",
+    desc: "A full-featured restaurant point-of-sale system handling table management, order routing to the kitchen, inventory tracking, and daily sales reporting — from a single fast tablet interface.",
+    image: iotProjectsImg,
+    url: "#",
   },
 ];
 
@@ -184,14 +183,16 @@ function HomePage() {
                   >
                     View case study →
                   </Link>
-                  <a
-                    href={w.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-                  >
-                    Visit Live Website ↗
-                  </a>
+                  {w.url !== "#" && (
+                    <a
+                      href={w.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+                    >
+                      Visit Live Website ↗
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import epiqueInteriorsImg from "@/assets/epique-interiors.jpg";
-import bsGreensmartImg from "@/assets/bs-greensmart-farm.jpg";
+import restaurantPosImg from "@/assets/iot-projects.jpg";
 
 export const Route = createFileRoute("/works")({
   head: () => ({
     meta: [
       { title: "Our Work — WebWix Solutions" },
-      { name: "description", content: "Explore featured client projects built by WebWix Solutions including Epique Interiors and BS GREENSMART FARM." },
+      { name: "description", content: "Explore featured client projects built by WebWix Solutions including Epique Interiors and a full-featured Restaurant POS System." },
       { property: "og:title", content: "Our Work — WebWix Solutions Showcase" },
       { property: "og:description", content: "Featured websites and platforms engineered by WebWix Solutions." },
     ],
@@ -34,21 +34,21 @@ const projects = [
     tech: ["React / TypeScript", "Tailwind CSS", "CMS Portfolio Engine", "Form Automation"],
   },
   {
-    id: "bs-greensmart-farm",
-    title: "BS GREENSMART FARM",
-    tagline: "Smart Agritech & Sustainable Farm Management Platform",
-    category: "AGRITECH & SMART FARMING",
-    image: bsGreensmartImg,
-    url: "https://greensmart-investments.vercel.app/",
+    id: "restaurant-pos",
+    title: "Restaurant POS System",
+    tagline: "End-to-End Point-of-Sale & Operations Platform for Restaurants",
+    category: "HOSPITALITY & RETAIL TECH",
+    image: restaurantPosImg,
+    url: "#",
     summary:
-      "An end-to-end digital agritech platform developed for BS GREENSMART FARM. Integrates farm product showcases, smart greenhouse IoT telemetry tracking, sustainable harvest forecasting, and a direct farm-to-table consumer ordering portal.",
+      "A full-featured restaurant point-of-sale system designed for quick-service and sit-down dining. The platform handles table management, order taking, kitchen display routing, inventory tracking, and daily sales reporting — all from a single, fast tablet interface built to survive a busy service.",
     highlights: [
-      "Real-time IoT greenhouse sensor telemetry integration",
-      "E-Commerce store for fresh organic farm produce",
-      "Automated inventory & crop yield management",
-      "Mobile-optimized consumer & wholesale portal",
+      "Real-time table & order management",
+      "Kitchen Display System (KDS) integration",
+      "Inventory tracking & low-stock alerts",
+      "Daily sales, tips & staff performance reports",
     ],
-    tech: ["Full-Stack Web App", "IoT Telemetry Dashboard", "E-Commerce Rails", "Cloud Telemetry"],
+    tech: ["React / TypeScript", "Node.js Backend", "Real-time WebSockets", "Offline-first PWA"],
   },
 ];
 
@@ -104,15 +104,16 @@ function WorksPage() {
                         </span>
                       ))}
                     </div>
-                    <a
-                      href={p.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-xs font-semibold text-primary-foreground transition-all hover:opacity-90 hover:shadow-md"
-                    >
-                      Visit Live Website ↗
-                    </a>
-                  </div>
+                    {p.url !== "#" && (
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-xs font-semibold text-primary-foreground transition-all hover:opacity-90 hover:shadow-md"
+                      >
+                        Visit Live Website ↗
+                      </a>
+                    )}                  </div>
                 </div>
               </div>
 

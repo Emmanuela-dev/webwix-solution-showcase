@@ -8,13 +8,13 @@ export const Route = createFileRoute("/innovations")({
       {
         name: "description",
         content:
-          "Explore the products and innovations WebWix Solutions is building — from solar-powered irrigation to B2B organic waste marketplaces.",
+          "Explore the products and innovations WebWix Solutions is building from solar-powered irrigation to B2B organic waste marketplaces.",
       },
-      { property: "og:title", content: "Innovations — WebWix Solutions" },
+      { property: "og:title", content: "Innovations WebWix Solutions" },
       {
         property: "og:description",
         content:
-          "From SolarFlow smart irrigation to Doki organic waste marketplace — a look at what we're building.",
+          "From SolarFlow smart irrigation to Doki organic waste marketplace a look at what we're building.",
       },
     ],
   }),
@@ -55,7 +55,7 @@ const innovations = [
     title: "Doki",
     tagline: "B2B marketplace for organic waste and circular materials.",
     description:
-      "A business-to-business platform connecting generators of organic waste — farms, food processors, and restaurants — with buyers who convert it into compost, biogas, animal feed, and other circular economy products. Doki brings price discovery, logistics coordination, and compliance documentation to a supply chain that previously ran entirely on phone calls.",
+      "A business-to-business platform connecting generators of organic waste farms, food processors, and restaurants with buyers who convert it into compost, biogas, animal feed, and other circular economy products. Doki brings price discovery, logistics coordination, and compliance documentation to a supply chain that previously ran entirely on phone calls.",
     vertical: "Software & Sustainability",
     status: "Beta" as InnovationStatus,
     highlights: [

@@ -35,25 +35,25 @@
 :root {
   --radius: 0.5rem;
   /* Soft Gray & Graphite Black Palette */
-  --background: oklch(0.965 0.004 250);        /* Soft, clean light gray */
-  --foreground: oklch(0.180 0.010 250);        /* Deep Graphite Black */
-  --card: oklch(0.985 0.003 250);              /* Crisp soft gray card */
-  --card-foreground: oklch(0.180 0.010 250);
-  --popover: oklch(0.985 0.003 250);
-  --popover-foreground: oklch(0.180 0.010 250);
-  --primary: oklch(0.200 0.012 250);           /* Solid Graphite Black */
-  --primary-foreground: oklch(0.985 0.003 250);/* Soft Light Gray */
-  --secondary: oklch(0.915 0.006 250);         /* Soft Silver Slate */
-  --secondary-foreground: oklch(0.220 0.010 250);
-  --muted: oklch(0.930 0.005 250);
-  --muted-foreground: oklch(0.440 0.012 250);  /* Medium Slate Gray */
-  --accent: oklch(0.320 0.015 250);             /* Dark Graphite Accent */
-  --accent-foreground: oklch(0.985 0.003 250);
+  --background: oklch(0.975 0.003 250);        /* Clean light gray */
+  --foreground: oklch(0.120 0.008 250);        /* Deep Graphite Black - stronger */
+  --card: oklch(0.995 0.002 250);              /* Crisp white card */
+  --card-foreground: oklch(0.120 0.008 250);
+  --popover: oklch(0.995 0.002 250);
+  --popover-foreground: oklch(0.120 0.008 250);
+  --primary: oklch(0.150 0.010 250);           /* Solid Graphite Black */
+  --primary-foreground: oklch(0.995 0.002 250);
+  --secondary: oklch(0.930 0.005 250);         /* Soft Silver Slate */
+  --secondary-foreground: oklch(0.160 0.008 250);
+  --muted: oklch(0.940 0.004 250);
+  --muted-foreground: oklch(0.320 0.010 250);  /* Darker Slate Gray - more readable */
+  --accent: oklch(0.250 0.012 250);             /* Dark Graphite Accent */
+  --accent-foreground: oklch(0.995 0.002 250);
   --destructive: oklch(0.55 0.20 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.880 0.006 250);            /* Subtle Graphite Border */
-  --input: oklch(0.880 0.006 250);
-  --ring: oklch(0.350 0.015 250);
+  --border: oklch(0.860 0.005 250);            /* Slightly darker border */
+  --input: oklch(0.860 0.005 250);
+  --ring: oklch(0.300 0.012 250);
 }
 
 @layer base {
@@ -71,6 +71,7 @@
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
+    font-weight: 700;
     letter-spacing: -0.02em;
   }
 }

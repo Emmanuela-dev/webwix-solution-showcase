@@ -16,6 +16,10 @@ export const Route = createFileRoute("/")({
         content:
           "WebWix Solutions builds resilient software, fintech, agritech, and IoT & embedded systems with hands-on mentorship and training.",
       },
+      {
+        name: "google-site-verification",
+        content: "-qFgPwJANOxfGWdZe7T8uau7EJ634NiVIMW-v-YW_4Y",
+      },
       { property: "og:title", content: "WebWix Solutions — Building softwares & IoT systems that last" },
       {
         property: "og:description",
